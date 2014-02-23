@@ -22,68 +22,91 @@ class Tile:
 	def sortkey(self): return 99
 	def __cmp__(self, other): return self.sortkey() - other.sortkey()
 	def __nonzero__(self): return self.__str__() != '🀫'
-	def __repr__(self):
-		if self.__nonzero__():
-			return self.__str__()
-		else:
-			return "<Unknown Mahjong tile>"
+	def __repr__(self): return "<Mahjong tile, unknown>"
 
 # Superclass for suited tiles
 class SuitedTile(Tile):
 	def isSuited(self): return True
+	def __repr__(self): return "<Mahjong tile, unknown>"
 
 # Superclass for character suit (Wanzi, Wanzu)
 class CharacterTile(SuitedTile):
 	def isCharacter(self): return True
+	def __repr__(self):
+		if self.__int__():
+			return "<Mahjong tile, " + str(self.__int__()) + " of characters>"
+		else:
+			return "<Mahjong tile, unknown of characters>"
 
 # Superclass for bamboo suit (Suozi, Sohzu)
 class BambooTile(SuitedTile):
 	def isBamboo(self): return True
+	def __repr__(self):
+		if self.__int__():
+			return "<Mahjong tile, " + str(self.__int__()) + " of bamboos>"
+		else:
+			return "<Mahjong tile, unknown of bamboos>"
 
 # Superclass for ciecle suit (Tongzi, Pinzu)
 class CircleTile(SuitedTile):
 	def isCircle(self): return True
+	def __repr__(self):
+		if self.__int__():
+			return "<Mahjong tile, " + str(self.__int__()) + " of circles>"
+		else:
+			return "<Mahjong tile, unknown of circles>"
 
 # Superclass for honor tiles
 class HonorTile(Tile):
 	def isHonor(self): return True
+	def __repr__(self): return "<Mahjong tile, unknown honor tile>"
 
 # Superclass for wind tiles (Fengpai, Kazehai)
 class WindTile(HonorTile):
 	def isWind(self): return True
+	def __repr__(self): return "<Mahjong tile, unknown wind tile>"
 
 # Superclass for dragon tiles (Sanyuanpai, Sangenpai)
 class DragonTile(HonorTile):
 	def isDragon(self): return True
+	def __repr__(self): return "<Mahjong tile, unknown dragon tile>"
 
 # Superclass for flower tiles
 class FlowerTile(Tile):
 	def isFlower(self): return True
+	def __repr__(self): return "<Mahjong tile, unknown orchid tile>"
 
 # Wind tiles
 class EastWindTileClass(WindTile):
 	def __str__(self): return '🀀'
 	def sortkey(self): return 31
+	def __repr__(self): return "<Mahjong tile, east wind>"
 class SouthWindTileClass(WindTile):
 	def __str__(self): return '🀁'
 	def sortkey(self): return 32
+	def __repr__(self): return "<Mahjong tile, south wind>"
 class WestWindTileClass(WindTile):
 	def __str__(self): return '🀂'
 	def sortkey(self): return 33
+	def __repr__(self): return "<Mahjong tile, west wind>"
 class NorthWindTileClass(WindTile):
 	def __str__(self): return '🀃'
 	def sortkey(self): return 34
+	def __repr__(self): return "<Mahjong tile, north wind>"
 
 # Dragon tiles
 class RedDragonTileClass(DragonTile):
 	def __str__(self): return '🀄'
 	def sortkey(self): return 37
+	def __repr__(self): return "<Mahjong tile, red dragon>"
 class GreenDragonTileClass(DragonTile):
 	def __str__(self): return '🀅'
 	def sortkey(self): return 36
+	def __repr__(self): return "<Mahjong tile, green dragon>"
 class WhiteDragonTileClass(DragonTile):
 	def __str__(self): return '🀆'
 	def sortkey(self): return 35
+	def __repr__(self): return "<Mahjong tile, white dragon>"
 
 # Character suit tiles
 class Character1Class(CharacterTile):
@@ -203,27 +226,35 @@ class Circle9Class(CircleTile):
 class PlumFlowerClass(FlowerTile):
 	def __str__(self): return '🀢'
 	def sortkey(self): return 45
+	def __repr__(self): return "<Mahjong tile, flower, plum>"
 class OrchidFlowerClass(FlowerTile):
 	def __str__(self): return '🀣'
 	def sortkey(self): return 46
+	def __repr__(self): return "<Mahjong tile, flower, orchid>"
 class ChrysanthemumFlowerClass(FlowerTile):
 	def __str__(self): return '🀤'
 	def sortkey(self): return 48
+	def __repr__(self): return "<Mahjong tile, flower, chrysanthemum>"
 class BambooFlowerClass(FlowerTile):
 	def __str__(self): return '🀥'
 	def sortkey(self): return 47
+	def __repr__(self): return "<Mahjong tile, flower, bamboo>"
 class SpringSeasonClass(FlowerTile):
 	def __str__(self): return '🀦'
 	def sortkey(self): return 41
+	def __repr__(self): return "<Mahjong tile, flower, spring>"
 class SummerSeasonClass(FlowerTile):
 	def __str__(self): return '🀧'
 	def sortkey(self): return 42
+	def __repr__(self): return "<Mahjong tile, flower, summer>"
 class AutumnSeasonClass(FlowerTile):
 	def __str__(self): return '🀨'
 	def sortkey(self): return 43
+	def __repr__(self): return "<Mahjong tile, flower, autumn>"
 class WinterSeasonClass(FlowerTile):
 	def __str__(self): return '🀩'
 	def sortkey(self): return 44
+	def __repr__(self): return "<Mahjong tile, flower, winter>"
 
 east = EastWindTileClass()
 south = SouthWindTileClass()
