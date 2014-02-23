@@ -29,3 +29,17 @@ def str2tile(srcStr):
 	else:
 		raise ValueError("cannot understand argument \""+str+"\"")
 
+# Count tiles by kind
+def counttiles(tileList):
+	result = {}
+	for tile in (tiles.characters + tiles.bamboos + tiles.circles + tiles.honors + (tiles.flower,)):
+		result[tile] = 0
+	for tile in tileList:
+		if tile in tiles.flowers:
+			result[tiles.flower] += 1
+		elif tile in result and tile != tiles.flower:
+			result[tile] += 1
+		else:
+			raise ValueError("invalid item found: "+repr(tile))
+	return result
+

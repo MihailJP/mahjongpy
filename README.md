@@ -158,3 +158,17 @@ Not implemented at this moment.
 #### Exception
 
 This method raises `ValueError` if the argument is invalid.
+
+### Count tiles in a sequence by kind
+
+```python
+mahjongpy.counttiles(mahjongpy.str2tile("1112345678999m"))
+```
+
+This method returns a dict with tile objects as keys.
+All flower tiles are put in `mahjongpy.tiles.flower` key together.
+
+#### Exception
+
+This method raises `ValueError` if the sequence includes an invalid tile object.
+
