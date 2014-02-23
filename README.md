@@ -129,6 +129,8 @@ Since `Tile` class includes `__cmp__` method, a list of tile objects can be sort
 |`__nonzero__(self)`         |returns `True` if `self` is a valid tile                     |
 |`__repr__(self)`            |returns string like `<Mahjong tile, 1 of bamboos>`           |
 |`__hash__(self)`            |returns hash value of `self`                                 |
+|`isTerminal(self)`          |`True` if `self` is a terminal tile, i.e. one or nine        |
+|`isTermHonor(self)`         |returns `self.isTerminal() or self.isHonor()`                |
 
 ### Make an array of tile objects from a string
 

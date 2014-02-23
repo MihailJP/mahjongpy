@@ -24,11 +24,14 @@ class Tile:
 	def __nonzero__(self): return self.__str__() != '🀫'
 	def __repr__(self): return "<Mahjong tile, unknown>"
 	def __hash__(self): return self.sortkey()
+	def isTerminal(self): return False
+	def isTermHonor(self): return self.isTerminal() or self.isHonor()
 
 # Superclass for suited tiles
 class SuitedTile(Tile):
 	def isSuited(self): return True
 	def __repr__(self): return "<Mahjong tile, unknown>"
+	def isTerminal(self): return int(self) == 1 or int(self) == 9
 
 # Superclass for character suit (Wanzi, Wanzu)
 class CharacterTile(SuitedTile):
