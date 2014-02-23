@@ -321,3 +321,5 @@ winds      = (east, south, west, north)
 dragons    = (red, green, white)
 honors     = winds + dragons
 flowers    = (plum, orchid, chrys, bamboo, spring, summer, autumn, winter)
+terminals  = (char1, char9, bamb1, bamb9, circ1, circ9)
+termHonors = terminals + honors

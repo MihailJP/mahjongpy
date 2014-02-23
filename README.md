@@ -42,6 +42,8 @@ These methods return a tuple consisting of nine uniformly suited tile objects in
 |`dragons`   |Dragon tiles _(Sanyuanpai, Sangenpai)_ |
 |`honors`    |Honor tiles _(Zipai, Jihai)_           |
 |`flowers`   |Flower tiles _(Huapai, Hanapai)_       |
+|`terminals` |Terminals (ones and nines)             |
+|`termHonors`|Terminals and honors                   |
 
 #### Sorting
 
