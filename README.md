@@ -34,6 +34,15 @@ These methods return a tuple consisting of nine uniformly suited tile objects in
 |`bamboos`   |Bamboo suit _(Suozi, Sohzu)_    |
 |`circles`   |Circle suit _(Tongzi, Pinzu)_   |
 
+... and also available:
+
+|Method      |Returns a tuple of...                  |
+|------------|---------------------------------------|
+|`winds`     |Wind tiles _(Fengpai, Kazehai)_        |
+|`dragons`   |Dragon tiles _(Sanyuanpai, Sangenpai)_ |
+|`honors`    |Honor tiles _(Zipai, Jihai)_           |
+|`flowers`   |Flower tiles _(Huapai, Hanapai)_       |
+
 #### Sorting
 
 Since `Tile` class includes `__cmp__` method, a list of tile objects can be sorted by the following order.
