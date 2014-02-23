@@ -23,6 +23,7 @@ class Tile:
 	def __cmp__(self, other): return self.sortkey() - other.sortkey()
 	def __nonzero__(self): return self.__str__() != '🀫'
 	def __repr__(self): return "<Mahjong tile, unknown>"
+	def __hash__(self): return self.sortkey()
 
 # Superclass for suited tiles
 class SuitedTile(Tile):
@@ -74,7 +75,12 @@ class DragonTile(HonorTile):
 # Superclass for flower tiles
 class FlowerTile(Tile):
 	def isFlower(self): return True
-	def __repr__(self): return "<Mahjong tile, unknown orchid tile>"
+	def __repr__(self): return "<Mahjong tile, unknown flower tile>"
+	def __hash__(self):
+		if self.sortkey() == 99:
+			return 38
+		else:
+			return self.sortkey()
 
 # Wind tiles
 class EastWindTileClass(WindTile):
@@ -302,6 +308,8 @@ spring = SpringSeasonClass()
 summer = SummerSeasonClass()
 autumn = AutumnSeasonClass()
 winter = WinterSeasonClass()
+
+flower = FlowerTile()
 
 characters = (char1, char2, char3, char4, char5, char6, char7, char8, char9)
 bamboos    = (bamb1, bamb2, bamb3, bamb4, bamb5, bamb6, bamb7, bamb8, bamb9)

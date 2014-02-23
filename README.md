@@ -22,6 +22,7 @@ Tiles as objects are in `mahjongpy.tiles`.
 |`circ1` to `circ9`                    |Circle suit _(Tongzi, Pinzu)_          |
 |`plum`, `orchid`, `chrys`, `bamboo`   |Flower tiles _(Huapai, Hanapai)_       |
 |`spring`, `summer`, `autumn`, `winter`|Flower tiles _(Huapai, Hanapai)_       |
+|`flower`                              |Abstract flower tile (for special use) |
 
 #### Sequence of suited tiles
 
@@ -118,6 +119,7 @@ Since `Tile` class includes `__cmp__` method, a list of tile objects can be sort
 |`__cmp__(self, other)`      |compares sort keys of two tiles                              |
 |`__nonzero__(self)`         |returns `True` if `self` is a valid tile                     |
 |`__repr__(self)`            |returns string like `<Mahjong tile, 1 of bamboos>`           |
+|`__hash__(self)`            |returns hash value of `self`                                 |
 
 ### Make an array of tile objects from a string
 
