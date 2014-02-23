@@ -118,3 +118,32 @@ Since `Tile` class includes `__cmp__` method, a list of tile objects can be sort
 |`__cmp__(self, other)`      |compares sort keys of two tiles                              |
 |`__nonzero__(self)`         |returns `True` if `self` is a valid tile                     |
 |`__repr__(self)`            |returns string like `<Mahjong tile, 1 of bamboos>`           |
+
+### Make an array of tile objects from a string
+
+```python
+mahjongpy.str2tile("19m19s19pESWNPFC")
+```
+
+#### Alphabetic notation
+
+This notation is widely used by Japanese (especially online) Mahjong players.
+
+|Regexp   |Description   |
+|---------|--------------|
+|`[1-9]+m`|Character suit|
+|`[1-9]+s`|Bamboo suit   |
+|`[1-9]+p`|Circle suit   |
+|`[ESWN]` |Wind tiles    |
+|`P`      |White dragon  |
+|`F`      |Green dragon  |
+|`C`      |Red dragon    |
+|`\s`     |ignored       |
+
+#### Unicode notation
+
+Not implemented at this moment.
+
+#### Exception
+
+This method raises `ValueError` if the argument is invalid.
